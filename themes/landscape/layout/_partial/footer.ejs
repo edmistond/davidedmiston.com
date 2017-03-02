@@ -1,0 +1,13 @@
+<footer id="footer">
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      Header image: <a href="https://upload.wikimedia.org/wikipedia/commons/e/e7/Chinook_salmon2.jpg">Josh Larios</a> 
+      via Creative Commons 2.0<br>
+      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
+      <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
