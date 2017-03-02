@@ -21,7 +21,7 @@
     "clean": "hexo clean",
     "prebuild": "npm run clean",
     "build": "hexo generate",
-    "stageserve": "hexo server --config _stagingconfig.yml",
+    "stageserve": "hexo server --draft --config _stagingconfig.yml",
     "stageclean": "hexo clean --config _stagingconfig.yml",
     "stagebuild": "hexo generate --config _stagingconfig.yml",
     "prestagebuild": "npm run stageclean",
