@@ -27,6 +27,8 @@
     "stagebuild": "hexo generate --config _stagingconfig.yml",
     "prestagebuild": "npm run stageclean",
     "stagedeploy": "rsync -azP --delete public_stage/ davidedmiston.com:staging.davidedmiston.com",
-    "prestagedeploy": "npm run stagebuild"
+    "prestagedeploy": "npm run stagebuild",
+    "deploy": "rsync -azP --delete public/ davidedmiston.com:davidedmiston.com",
+    "predeploy": "npm run build"
   }
 }
