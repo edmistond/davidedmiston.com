@@ -4,17 +4,19 @@ tags:
   - node
   - ramda
   - functional
-date: 2017-03-02 11:49:38
+date: 2017-03-01 22:00
 ---
 
 
 
 * Part 1 - {% post_link Parsing-Bank-Transactions-with-ramda-js Importing the CSV, using map, and currying %} (this article)
-* Part 2 - Summing, forEach, and pattern matching
+* Part 2 - {% post_link Bank-Transactions-with-Ramda-part-2 Summing, forEach, and pattern matching %}
 
 Recently, I'd wanted to sort through a bunch of transaction data from my bank to figure out what our spending trends were in a couple of areas. I suppose I could've done this quite effectively with Excel or Apple Numbers, but then I said, hey, that's boring. :) I've been doing a lot of documentation and research stuff at work lately and really wanted to get my hands on a little toy project for a change of pace.
 
 That said, I didn't want to spend *too* much time getting bogged down in stuff, so I decided to do it with node.js; node 7.6.0 was released recently and has native async/await, so it seemed like a great choice for a couple hours of hacking.
+
+### Setting up
 
 First thing to do was to get a bunch of transaction data from my bank's web site; they make it easy to download in CSV. That returns a file with the following format:
 
@@ -64,6 +66,8 @@ run();
 // > node parse.js
 // got 478 transactions
 {% endcodeblock %}
+
+### Operating on data with `map`
 
 Excellent. Data. Now how to parse it?
 
@@ -115,6 +119,8 @@ const processTransactions = (transactionList) => {
 // You had 10 purchases for the dog
 {% endcodeblock %}
 
+### Quickly demonstrating currying
+
 But wait! We also have an opportunity to use Ramda's automatic currying of functions. Put simply, this allows us to call a function without supplying its final values, getting back in turn another function that you can apply repeatedly against different values, using the same initial input. That would look like this:
 
 {% codeblock lang:js %}
@@ -125,7 +131,7 @@ const tagTransaction = (transaction) => {
 
   transaction.isRestaurant = checkPayeeMatch(restaurantPayees);
   transaction.isPet = checkPayeeMatch(petPayees);
-  transaction.isIncome = parseFloat(transaction.Amount) > 0.0;
+  transaction.Amount = parseFloat(transaction.Amount);
 
   return transaction;
 };
