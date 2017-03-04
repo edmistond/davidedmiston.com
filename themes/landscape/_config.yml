@@ -11,11 +11,12 @@ fancybox: true
 # Sidebar
 sidebar: right
 widgets:
+- colophon
 - category
-- tag
-- tagcloud
+# - tagcloud
 - archive
 - recent_posts
+- tag
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
@@ -29,7 +30,7 @@ show_count: false
 
 # Miscellaneous
 google_analytics: UA-92959349-1
-favicon: /favicon.png
+# favicon: /favicon.png
 twitter:
 google_plus:
 fb_admins:
