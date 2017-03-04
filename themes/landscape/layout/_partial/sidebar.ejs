@@ -1,9 +1,4 @@
 <aside id="sidebar"<% if (theme.sidebar === 'bottom'){ %> class="outer"<% } %>>
-  <div class="widget-wrap">
-    <div class="widget">
-      <a href="<%- url_for('/About/') %>">About Me</a>
-    </div>
-  </div>
   <% theme.widgets.forEach(function(widget){ %>
     <%- partial('_widget/' + widget) %>
   <% }) %>
