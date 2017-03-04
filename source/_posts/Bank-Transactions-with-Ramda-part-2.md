@@ -11,7 +11,7 @@ tags:
 
 When we left off, we'd gotten our data imported from the CSV, run a map operation on it to add some extra metadata, demonstrated how to use Ramda to filter it, and had a quick demonstration of simple currying. Let's move on. To recap, this is where we're starting from:
 
-{% codeblock lang:js parse.js %}
+```javascript parse.js
 const fs = require('fs');
 const csv = require('fast-csv');
 const R = require('ramda');
@@ -65,13 +65,13 @@ const processTransactions = (transactionList) => {
 
 // > node parse.js
 // You had 10 purchases for the dog
-{% endcodeblock %}
+```
 
 ### Summing up
 
 Okay, so let's dive in. Next up, we'd like to see how much we spent taking care of the dog in the past couple of months - day care, vet bills, purchases at the pet store, stuff like that. This is pretty straightforward in the transaction processing block, fortunately:
 
-{% codeblock lang:js %}
+```javascript
 const processTransactions = (transactionList) => {
   const taggedTransactions = R.map(tagTransaction, transactionList);
 
@@ -85,23 +85,23 @@ const processTransactions = (transactionList) => {
 // > node parse.js
 // You had 10 purchases for the dog
 // You spent -924.60 on the dog last year.
-{% endcodeblock %}
+```
 
 Note that since we wanted to total up the amount specifically and what we have is an array of transaction objects, we first had to map the transactions collection to extract just the value of the `Amount` property. Afterward, it's very straightforward and we just drop it straight into `R.sum`, which takes a single array argument.
 
 That said, we can apply some additional tools here to again create general summarizer function that will take *any* array of objects that have an `Amount` property and generate a summary for any of them - so if we had collections of both pet totals and restaurant totals, we could create the function once and run either array through it, like so:
 
-{% codeblock lang:js %}
+```javascript
   const summarizer = R.pipe(R.map(t => t.Amount), R.sum);
   let petTotal = summarizer(petTransactions);
   let restaurantTotal = summarizer(restaurantTransactions);
-{% endcodeblock %}
+```
 
 ### Simple printer functions
 
 So that's pretty cool. Next, let's put together a simple printer function to generate a one-line summary of a transactions block, again using some of the same principles we've seen illustrated here so far:
 
-{% codeblock lang:js %}
+```javascript
 const processTransactions = (transactionList) => {
   const taggedTransactions = R.map(tagTransaction, transactionList);
 
@@ -116,13 +116,13 @@ const processTransactions = (transactionList) => {
 
 // > node parse.js
 // Pet expenses: 10 transactions for a total of $924.60
-{% endcodeblock %}
+```
 
 ### Pattern matching-ish with `cond`
 
 Finally, let's take a look at using `R.cond` to achieve something that behaves kind of like pattern matching in functional languages like Elixir. It's not a *perfect* translation of the concept, but the technique does work pretty well. For a contrived example, let's say we wanted to break out the different sorts of pet-related transactions: food transactions from the pet store, versus "care" things like vet visits, grooming, and day care.
 
-{% codeblock lang:js %}
+```javascript
 const classifyPetTransactions = (transactionList) => {
   let care = [];
   let food = [];
@@ -160,16 +160,16 @@ const processTransactions = (transactionList) => {
 // Pet expenses: 10 transactions for a total of $924.60
 // Food expenses: 3 transactions for a total of $174.90
 // Care expenses: 7 transactions for a total of $749.70
-{% endcodeblock %}
+```
 
 In `classifyPetTransactions` we're running each item through `R.cond`; what happens there is that `cond` takes an array of `[predicate, transformer]` elements and returns a function. Predicates should return a "truthy" value. You then pass an object to the function which was returned, and that object will be passed to the predicate, in the order they were defined, until it hits the first one to return a truthy value and applies the transformer function. In our case, the transformer doesn't actually transform, but instead pushes the transaction into a predefined array. We could, of course, have also have set a property on the transaction, or performed some other action:
 
-{% codeblock lang:js %}
+```javascript
 const classifier = R.cond([
   [classifyFood, (t) => t.tag = "food"],
   [classifyCare, (t) => t.tag = "care"]
 ]);
-{% endcodeblock %}
+```
 
 All of this is, of course, a relatively simple and contrived example, but I find that's often helpful. I found `cond` a bit difficult to understand at first, and it was by working with relatively simple examples like this one that I finally gained an understanding of it.
 
@@ -189,7 +189,7 @@ It's also worth noting this doesn't have to be exclusive to JavaScript, either -
 
 To recap, here's what our final file looks like:
 
-{% codeblock lang:js parse.js %}
+```javascript
 const fs = require('fs');
 const csv = require('fast-csv');
 const R = require('ramda');
@@ -266,6 +266,6 @@ const processTransactions = (transactionList) => {
   console.log('Food expenses:', generateSummary(petFood));
   console.log('Care expenses:', generateSummary(petCare));
 }
-{% endcodeblock %}
+```
 
 Thanks for reading, and I hope you found it useful!

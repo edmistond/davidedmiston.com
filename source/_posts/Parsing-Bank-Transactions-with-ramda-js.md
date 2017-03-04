@@ -20,15 +20,15 @@ That said, I didn't want to spend *too* much time getting bogged down in stuff, 
 
 First thing to do was to get a bunch of transaction data from my bank's web site; they make it easy to download in CSV. That returns a file with the following format:
 
-{% codeblock %}
+```
 "Date","Reference Number","Payee Name","Memo","Amount","Category Name"
-{% endcodeblock %}
+```
 
 The payee name field seems to have a hard limit of 15 characters for most entries, unless they originated within the bank's system. Annoying and not totally descriptive, but whatever, we can deal with it.
 
 First order of business: get the file in. I'm using [fast-csv](https://www.npmjs.com/package/fast-csv) to parse the files. The actual process of that is pretty straightforward. Since this is a small file, rather than process the stream events individually, I'd rather just append them all to a collections object, read 'em in, and then return them all at once. If you were doing this on a huge file, that's probably a bad idea. :) However, for ~500 transactions or so, it's no big deal. So let's do that: we're going to read in the file, append all the transactions into an array, then finally resolve the promise and return the data once we hit the end of the file. Along the way, we're also going to reject the promise if the CSV parsing throws an error.
 
-{% codeblock lang:js %}
+```javascript
 function getTransactionsFromFile(fname) {
   return new Promise(async (resolve, reject) => {
 
@@ -65,7 +65,7 @@ run();
 
 // > node parse.js
 // got 478 transactions
-{% endcodeblock %}
+```
 
 ### Operating on data with `map`
 
@@ -85,7 +85,7 @@ So let's say we want to figure out how much we spent on the dog, and also how mu
 
 We don't *have* to do it this way, but I'm going to run the transactions array through a map operation that transforms them by adding additional data to them. First we need a function that takes a single transaction, inspects the payee and payment amounts, and tags them with some data:
 
-{% codeblock lang:js %}
+```javascript
 const restaurantPayees = ["MCDONALDS", "CHIPOTLE", "JACKS DELI"];
 const petPayees = ["CAMP BOW WOW", "VET", "PET STORE", "GROOMER"];
 
@@ -103,11 +103,11 @@ const tagTransaction = (transaction) => {
 
   return transaction;
 };
-{% endcodeblock %}
+```
 
 And then, just to confirm it's working correctly, let's also add a quick filter operation on the pet transactions to see how many there were.
 
-{% codeblock lang:js %}
+```javascript
 const processTransactions = (transactionList) => {
   const taggedTransactions = R.map(tagTransaction, transactionList);
 
@@ -117,13 +117,13 @@ const processTransactions = (transactionList) => {
 
 // > node parse.js
 // You had 10 purchases for the dog
-{% endcodeblock %}
+```
 
 ### Quickly demonstrating currying
 
 But wait! We also have an opportunity to use Ramda's automatic currying of functions. Put simply, this allows us to call a function without supplying its final values, getting back in turn another function that you can apply repeatedly against different values, using the same initial input. That would look like this:
 
-{% codeblock lang:js %}
+```javascript
 const tagTransaction = (transaction) => {
   // Note that this is checking transactions by exact payee name match; 
   // "MCDONALDS #372" and "MCDONALDS #778" would not match.
@@ -138,7 +138,7 @@ const tagTransaction = (transaction) => {
 
 // > node parse.js
 // You had 10 purchases for the dog
-{% endcodeblock %}
+```
 
 As you can see, we built a curried `checkPayeeMatch` function by calling `R.contains` and only supplying the payee name field; we can then use it to check the same payee against both the restaurant and pet-related payee names. It's a small thing, but an example of "don't repeat yourself" in action.
 

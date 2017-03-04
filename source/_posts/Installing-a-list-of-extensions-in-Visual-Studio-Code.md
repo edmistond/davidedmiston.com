@@ -10,9 +10,9 @@ Unfortunately, while Visual Studio Code’s command line utility allows you to g
 
 Fortunately, a minute with Google and Stack Overflow turns up [this very helpful answer](http://stackoverflow.com/questions/13939038/how-do-you-run-a-command-for-each-line-of-a-file) to run a command for each line in a text file. From there, some quick trial and error got me to this:
 
-{% codeblock lang:bash %}
+```bash
 while read in; do code --install-extension "$in"; done < ~/vscode-extensions.txt
-{% endcodeblock %}
+```
 
 Not quite as convenient as Atom’s solution, but a nice way to make sure you don’t overlook anything.
 
