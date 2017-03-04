@@ -65,14 +65,16 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: landscape
 
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type:
-
 feed:
   type: atom
   path: atom.xml
   limit: 20
   content: true
   hub:
+
+deploy:
+  type: rsync
+  host: davidedmiston.com
+  root: staging.davidedmiston.com
+  args: -azP
+  user: edmistond

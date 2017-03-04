@@ -8,6 +8,7 @@
   "dependencies": {
     "hexo": "^3.2.0",
     "hexo-browsersync": "^0.2.0",
+    "hexo-deployer-rsync": "^0.1.2",
     "hexo-filter-fenced-code": "^1.0.2",
     "hexo-generator-archive": "^0.1.4",
     "hexo-generator-category": "^0.1.3",
@@ -20,16 +21,6 @@
     "hexo-server": "^0.2.0"
   },
   "scripts": {
-    "clean": "hexo clean",
-    "prebuild": "npm run clean",
-    "build": "hexo generate",
-    "stageserve": "hexo server --draft --config _stagingconfig.yml",
-    "stageclean": "hexo clean --config _stagingconfig.yml",
-    "stagebuild": "hexo generate --config _stagingconfig.yml",
-    "prestagebuild": "npm run stageclean",
-    "stagedeploy": "rsync -azP --delete public_stage/ davidedmiston.com:staging.davidedmiston.com",
-    "prestagedeploy": "npm run stagebuild",
-    "deploy": "rsync -azP --delete public/ davidedmiston.com:davidedmiston.com",
-    "predeploy": "npm run build"
+    "deploy_stage": "hexo generate --config _stagingconfig.yml && hexo deploy --config _stagingconfig.yml"
   }
 }
