@@ -5,11 +5,13 @@ undated: true
 ---
 Hi! I'm David, often [found](http://www.twitter.com/edmistond) [online](http://www.github.com/edmistond) as edmistond.
 
-I'm an experienced polyglot software developer who's worked across the entire stack in a variety of languages. 
+I'm an experienced polyglot software developer who's worked across the entire stack in a variety of languages.
 
-#### Experience
+I've been in the industry for many years and have a track record of consistently delivering projects with substantial business value to my employers and to our clients.
 
-I've been in the industry for many years and have delivered projects with substantial business value to my employers and our clients.
+I've found that I'm happiest when I'm working on interesting, challenging technical problems that offer opportunities to explore new things professionally. Those opportunities could be things like mentoring less experienced developers, helping them to realize their potential and to level up their skills. Or, they could be opportunities for me to acquire new skills -- whether that's a new-to-me language or framework, or learning about a new business domain. I also very much enjoy opportunities to have a significant, positive impact on the organizaiton.
+
+Outside of the office, I make an effort to be involved with the technical community in Cleveland, attending a couple of meetups, and can be frequently found in both the Cleveland Tech Slack group as well as the Deaf Professionals Slack group. On a personal level, I have interests in photography and make an effort to spend time with my family.
 
 ##### Some things I've built:
 
@@ -36,15 +38,3 @@ I've been in the industry for many years and have delivered projects with substa
 * JavaScript - in browser and Node.js, Express.js web applications
 * SQL - primarily Microsoft SQL Server
 * Python and Ruby - primarily command-line scripting
-
-##### Things that excite me, professionally:
-
-I've found that I'm happiest working on interesting, challenging technical problems that offer me opportunities to:
-
-* Mentor less experienced developers, helping them to realize their potential and level up their skills
-* Acquire new skills, such as a new-to-me language or framework
-* Learn about new business domains
-* Have a significant and positive impact on the organization
-
-Outside of the office, I make an effort to be involved with the technical community in Cleveland, attending a couple of meetups, and can be frequently found in both the Cleveland Tech Slack group as well as the Deaf Professionals Slack group. On a personal level, I have interests in photography and make an effort to spend time with my family.
-
