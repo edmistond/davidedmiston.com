@@ -410,21 +410,21 @@ The only thing I don't particularly care for is using the `concat` method; it fe
 One approach would be adding an accumulator to our `flatten` function allowing us to pass in the original result array, if it exists, and simply append more values to that. Let's try it! We'll write a quick `accumulatingFlatten` function and then just change the `module.exports` to return that for the flatten function instead; that'll let us see if all our tests still work.
 
 ```js flatten.js
-function accumulatingFlatten(inputArray, result) {
+function accumulatingFlatten(inputArray, acc) {
   if (!(inputArray instanceof Array)) { return [inputArray]; }
 
-  result = result || [];
+  acc = acc || [];
 
   inputArray.forEach((item) => {
     if (item instanceof Array) {
-      accumulatingFlatten(item, result);
+      accumulatingFlatten(item, acc);
     }
     else {
-      result.push(item);
+      acc.push(item);
     }
   });
 
-  return result;
+  return acc;
 }
 
 module.exports.flatten = accumulatingFlatten;
