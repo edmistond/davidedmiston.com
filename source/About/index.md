@@ -5,11 +5,11 @@ undated: true
 ---
 Hi! I'm David, often [found](http://www.twitter.com/edmistond) [online](http://www.github.com/edmistond) as edmistond.
 
-I'm an experienced polyglot software developer who's worked across the entire stack in a variety of languages.
+I'm an experienced polyglot software developer who's worked across the entire stack in a variety of languages. I've been in the industry for many years, and have a track record of consistently delivering projects with substantial business value to my employers and to our clients.
 
-I've been in the industry for many years and have a track record of consistently delivering projects with substantial business value to my employers and to our clients.
+As an experienced senior developer, I try to take a pragmatic approach to software development while checking my ego at the door. I think good senior developers and team leads are interested in _good_ engineer, not necessarily _their_ engineering. Which is to say, they check their egos at the door and always look for a better way, and that's the kind of team I want to work with.
 
-I've found that I'm happiest when I'm working on interesting, challenging technical problems that offer opportunities to explore new things professionally. Those opportunities could be things like mentoring less experienced developers, helping them to realize their potential and to level up their skills. Or, they could be opportunities for me to acquire new skills -- whether that's a new-to-me language or framework, or learning about a new business domain. I also very much enjoy opportunities to have a significant, positive impact on the organizaiton.
+I'm happiest when I'm working on interesting, challenging technical problems with a major business impact that push me to explore new things, whether that's a new business domain or a new programming language or framework. A frequent release cadence is fantastic; code that's written and not in production is essentially waste that you're not getting any value from. I'm _very_ excited by opportunities for mentorship -- helping other people level up their skills and reach their potential is a fantastic way to improve the entire team.
 
 Outside of the office, I make an effort to be involved with the technical community in Cleveland, attending a couple of meetups, and can be frequently found in both the Cleveland Tech Slack group as well as the Deaf Professionals Slack group. On a personal level, I have interests in photography and make an effort to spend time with my family.
 
@@ -36,5 +36,13 @@ Outside of the office, I make an effort to be involved with the technical commun
 
 * C# - ASP.NET Web Forms, ASP.NET MVC, ASP.NET Web API, also command line applications
 * JavaScript - in browser and Node.js, Express.js web applications
+* TypeScript - for my Visual Studio Code extension
 * SQL - primarily Microsoft SQL Server
 * Python and Ruby - primarily command-line scripting
+
+##### Conferences I've Enjoyed
+
+* CodeMash 2009 - 2011
+* Steel City Ruby 2013 - 2014
+* Erie Day of Code 2015
+* Kalamazoo X 2014 - 2017
