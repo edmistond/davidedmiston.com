@@ -6,3 +6,4 @@ node_modules/
 public/
 public_stage/
 .deploy*/
+hexo-org-cache/
