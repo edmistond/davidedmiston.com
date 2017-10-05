@@ -4,7 +4,7 @@ tags:
   - node
   - ramda
   - functional
-date: 2017-03-24 18:00
+date: 2017-03-28 20:00
 ---
 
 
@@ -16,9 +16,9 @@ For this sort of question, I actually think a dynamic language like JavaScript o
 
 > Candidates fail to write proper method signatures. They get confused about what type of list they should use. Some start with List of integers `List<Integer>` ints. They fail to see how they will store a `List<Integer>` to a `List<Integer>`.
 
-Since JavaScript lets you stuff pretty much anything into an array - for better or sometimes worse, as the case may be - the problem is much more straightforward to approach there.
+Since JavaScript lets you stuff pretty much anything into an array&mdash;for better or sometimes worse, as the case may be&mdash;the problem is much more straightforward to approach there.
 
-He asks candidates to write test cases. Let's start with a simple stub file and a test - I'm using [Mocha](https://mochajs.org/) here.
+He asks candidates to write test cases. Let's start with a simple stub file and a test&mdash;I'm using [Mocha](https://mochajs.org/) here.
 
 ```javascript flatten.js
 function flatten(inputArray) {
@@ -122,7 +122,7 @@ it("should return a two element array with no sub-arrays", () => {
 //
       // AssertionError: [ 1, 2 ] == [ 1, 2 ]
 ```
-Alrighty then... wait, what? Why is it saying that `[1, 2]` doesn't equal `[1, 2]`? We need to check using `deepEqual` instead of just `equal` - it's a bit much to get into here, but [this link](http://dailyjs.com/post/js101-deep-equal) goes into a quick overview of the differences. Interestingly, using `equal` works fine on single-element arrays and doesn't try to tell you that `[1]` and `[2]` are equal.
+Alrighty then... wait, what? Why is it saying that `[1, 2]` doesn't equal `[1, 2]`? We need to check using `deepEqual` instead of just `equal`&mdash;it's a bit much to get into here, but [this link](http://dailyjs.com/post/js101-deep-equal) goes into a quick overview of the differences. Interestingly, using `equal` works fine on single-element arrays and doesn't try to tell you that `[1]` and `[2]` are equal.
 
 Change the assertion and the tests pass:
 
@@ -180,7 +180,7 @@ var processArrayItem = (item) => {
       // + expected - actual
 ```
 
-So yeah, that didn't quite work; the recursive function worked perfectly, but since it returned its results all at once. I anticipated this and added a bit of `console.log`ing; you can see we got back an array that got pushed into the results array as a single element, and puts us right back around where we started.
+So yeah, that didn't quite work; the recursive function worked perfectly, but it returned its results all at once. I anticipated this and added a bit of `console.log`ing; you can see we got back an array that got pushed into the results array as a single element, and puts us right back around where we started.
 
 So... how do we attack this? Since we're already using Ramda, we could just use the `concat` method for this:
 
@@ -251,7 +251,7 @@ module.exports.flatten = flatten;
 //   1 pending
 ```
 
-Since we have tests, we can see we didn't break anything there. Let's go ahead and try un-skipping that more complicated test and applying that `deepEqual` fix to it and see if we get the behavior we're wanting.
+Since we have tests, we can see we didn't break anything there. Let's try un-skipping that more complicated test, applying that `deepEqual` fix to it, and seeing if we get the behavior we want.
 
 ```javascript flatten_test.js
 it("should return a flattened array when passed a nested array", () => {
@@ -273,7 +273,7 @@ it("should return a flattened array when passed a nested array", () => {
 // 4 passing (7ms)
 ```
 
-Oh - but we don't have a test case for that guard clause! We know everything works when we pass in an array. Let's also make sure we get the expected behavior if we just pass in a bare element - it should "flatten" it into a single element array. I'll note I've broken with good practice here; by the strict approach to TDD, I should have written a test for this prior to even adding that guard clause. However - I think it can be okay to be a little lax while you're spiking concepts (or blogging :)), but even so, let's clean this up.
+Oh&mdash;but we don't have a test case for that guard clause! We know everything works when we pass in an array. Let's also make sure we get the expected behavior if we just pass in a bare element - it should "flatten" it into a single element array. I'll note I've broken with good practice here; by the strict approach to TDD, I should have written a test for this prior to even adding that guard clause. However, I think it's okay to be a little lax while you're spiking concepts (or blogging :)). Even so, let's clean this up.
 
 ```javascript flatten_test.js
 it("should return an array when passed a bare object", () => {
