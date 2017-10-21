@@ -22,6 +22,7 @@
     "hexo-server": "^0.2.0"
   },
   "scripts": {
+    "deploy_prod": "hexo generate && hexo deploy",
     "deploy_stage": "hexo generate --config _stagingconfig.yml && hexo deploy --config _stagingconfig.yml"
   }
 }
