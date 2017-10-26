@@ -7,7 +7,7 @@ Hi! I'm David, often [found](http://www.twitter.com/edmistond) [online](http://w
 
 I'm an experienced polyglot software developer who's worked across the entire stack in a variety of languages. I've been in the industry for many years, and have a track record of consistently delivering projects with substantial business value to my employers and to our clients.
 
-As an experienced senior developer, I try to take a pragmatic approach to software development while checking my ego at the door. I think good senior developers and team leads are interested in _good_ engineer, not necessarily _their_ engineering. Which is to say, they check their egos at the door and always look for a better way, and that's the kind of team I want to work with.
+As an experienced senior developer, I try to take a pragmatic approach to software development. I think good senior developers and team leads are interested in _good_ engineering, not necessarily _their_ engineering. Which is to say, they check their egos at the door and always look for a better way, and that's the kind of team I want to work with.
 
 I'm happiest when I'm working on interesting, challenging technical problems with a major business impact that push me to explore new things, whether that's a new business domain or a new programming language or framework. A frequent release cadence is fantastic; code that's written and not in production is essentially waste that you're not getting any value from. I'm _very_ excited by opportunities for mentorship -- helping other people level up their skills and reach their potential is a fantastic way to improve the entire team.
 
