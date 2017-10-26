@@ -47,12 +47,6 @@ highlight:
 default_category: uncategorized
 category_map:
 tag_map:
-
-#orgmode setup
-org:
-  emacs: /Applications/Emacs.app/Contents/MacOS/Emacs
-  emacsclient: /Applications/Emacs.app/Contents/MacOS/bin/emacsclient
-  htmlize: false
   
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
