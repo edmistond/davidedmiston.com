@@ -1,9 +1,0 @@
-#+TITLE: Org Mode Rendering Test
-#+TAGS: org-mode, hexo
-#+DATE: <2017-10-03 Tue 20:00>
-
-I generally enjoy using Emacs, but have been mainly using Visual Studio Code for blogging since it supports syntax highlighting in fenced markdown code blocks without making me jump through annoying hoops. That said, I find certain editor tasks easier when I'm using Emacs, particularly with my evil-mode keybindings and extensions, not to mention being able to use magit for managing the repository. Accordingly, trying to figure out a way to get this working in Emacs has been something I'd been poking at off and on.
-
-There's [[https://github.com/purcell/mmm-mode][mmm-mode]] but I found it more than a bit flaky and difficult to use.
-
-After doing some digging, I found there's an org-mode renderer for Hexo, the [[https://www.davidedmiston.com/2017/03/01/Hello-Hexo/][blog engine I use]] to generate this site. There's also a [[https://coldnew.github.io/hexo-org-example/2017/03/05/getting-started-with-hexo-and-org-mode/][really helpful post]] on getting everything set up, and that's what I used for the model. Works great, correctly renders and highlights syntax blocks in org-mode, and lets me use the keybindings and git client I prefer... so I guess I'll try punching out a few posts and see how I like working with it. The only downside I've found is I can't seem to specify a filename for source code blocks, but it's a limitation I can live with for now.
