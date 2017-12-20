@@ -15,6 +15,7 @@ date: 2017-03-01 22:00
 Recently, I'd wanted to sort through a bunch of transaction data from my bank to figure out what our spending trends were in a couple of areas. I suppose I could've done this quite effectively with Excel or Apple Numbers, but then I said, hey, that's boring. :) I've been doing a lot of documentation and research stuff at work lately and really wanted to get my hands on a little toy project for a change of pace.
 
 That said, I didn't want to spend *too* much time getting bogged down in stuff, so I decided to do it with node.js; node 7.6.0 was released recently and has native async/await, so it seemed like a great choice for a couple hours of hacking.
+<!-- more -->
 
 ### Setting up
 

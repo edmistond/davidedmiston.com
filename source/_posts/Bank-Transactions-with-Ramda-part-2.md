@@ -10,6 +10,7 @@ tags:
 * Part 2 - {% post_link Bank-Transactions-with-Ramda-part-2 Summing, forEach, and pattern matching %} (this article)
 
 When we left off, we'd gotten our data imported from the CSV, run a map operation on it to add some extra metadata, demonstrated how to use Ramda to filter it, and had a quick demonstration of simple currying. Let's move on. To recap, this is where we're starting from:
+<!-- more -->
 
 ```javascript parse.js
 const fs = require('fs');

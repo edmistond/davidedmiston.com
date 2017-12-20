@@ -11,6 +11,7 @@ date: 2017-03-28 20:00
 Getting back to writing articles after spending the better part of a month fighting off a sinus infection and helping my wife get over a nasty cold. Normally I love northeast Ohio, but I'm so over winter right now.
 
 [I read a post a month or so ago](https://shekhargulati.com/2017/02/24/why-its-hard-for-programmers-to-write-a-program-to-flatten-a-list/) asking why it's so difficult for programmers to write code to flatten a list... so naturally, this got me thinking about it and I wanted to tackle it. To start with, let's try tackling it in Javascript.
+<!-- more -->
 
 For this sort of question, I actually think a dynamic language like JavaScript or Ruby is probably the ideal choice, and the reason for that is hinted at in the post when he remarks that:
 
